@@ -4,20 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>proj_ctrlsimu_robot | Home of Cloudroid</title>
+    <title>Powershell_notes | Home of Cloudroid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Sanders Jaylaw">
     
-    <meta name="description" content="Goal
-仿真三轮全向移动机器人
-实验要求：
-
-三轮全向移动机器人能跟踪给定的轨迹。
-跟踪轨迹包括直线、折线和圆弧。
-具有良好的跟踪性能：角度误差小于1度，X轴和Y轴的误差小于5cm。
-具有良好的运动性能：最大速度大于3m/s，从停止到最大速度的时间不大于2s。
-具有良好的图形显示效果。Analys">
+    <meta name="description" content="Powershell应用技巧
+概述
+PowerShell可谓是一个异常强大的命令行工具，完美结合了GUI与命令行，由于基本兼容bash语法，所以学习难度很低，值得学习。
+文件操作
+新建文件及文件夹
+在你的计算机上New-Item 是一个创建新文件和文件夹快而简单的的方法。
+举个例子，架设你想在 C:">
     
     
     
@@ -78,15 +76,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/05/30/proj_ctrlsimu_robot/" title="proj_ctrlsimu_robot" itemprop="url">proj_ctrlsimu_robot</a>
+      <a href="/2014/06/02/powershell_notes/" title="Powershell_notes" itemprop="url">Powershell_notes</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="Sanders Jaylaw">Sanders Jaylaw</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-05-30T01:29:38.000Z" itemprop="datePublished">5月 30 2014</time>
-    更新日期:<time datetime="2014-05-30T12:39:33.000Z" itemprop="dateModified">5月 30 2014</time>
+    <time datetime="2014-06-01T23:29:59.000Z" itemprop="datePublished">6月 2 2014</time>
+    更新日期:<time datetime="2014-06-01T23:37:26.000Z" itemprop="dateModified">6月 2 2014</time>
     
   </p>
 </header>
@@ -95,28 +93,39 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Goal"><span class="toc-number">1.</span> <span class="toc-text">Goal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analysis"><span class="toc-number">2.</span> <span class="toc-text">Analysis</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Powershell应用技巧"><span class="toc-number">1.</span> <span class="toc-text">Powershell应用技巧</span></a></li><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-number">1.2.</span> <span class="toc-text">文件操作</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建文件及文件夹"><span class="toc-number">1.2.1.</span> <span class="toc-text">新建文件及文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件夹移动及复制"><span class="toc-number">1.2.2.</span> <span class="toc-text">文件夹移动及复制</span></a></li></ol>
 		</div>
 		
-		<h2 id="Goal">Goal</h2>
-<p><strong>仿真三轮全向移动机器人</strong></p>
-<p>实验要求：</p>
-<ol>
-<li>三轮全向移动机器人能跟踪给定的轨迹。</li>
-<li>跟踪轨迹包括直线、折线和圆弧。</li>
-<li>具有良好的跟踪性能：角度误差小于1度，X轴和Y轴的误差小于5cm。</li>
-<li>具有良好的运动性能：最大速度大于3m/s，从停止到最大速度的时间不大于2s。</li>
-<li>具有良好的图形显示效果。<h2 id="Analysis">Analysis</h2>
-需要做的事情：</li>
-</ol>
-<p>1.搭建</p>
+		<h1 id="Powershell应用技巧">Powershell应用技巧</h1>
+<h2 id="概述">概述</h2>
+<p>PowerShell可谓是一个异常强大的命令行工具，完美结合了GUI与命令行，由于基本兼容bash语法，所以学习难度很低，值得学习。</p>
+<h2 id="文件操作">文件操作</h2>
+<h3 id="新建文件及文件夹">新建文件及文件夹</h3>
+<p>在你的计算机上New-Item 是一个创建新文件和文件夹快而简单的的方法。</p>
+<p>举个例子，架设你想在 C:/Scripts 文件夹内建立一个新的目录名为 Windows PowerShell 文件。仅仅只要使用New-Item ：</p>
+<p>1）新文件夹的完整路径；</p>
+<p>2）新的项目类型（其中你可以置顶使用 -type 参数与目录值）。这个命令在问题中看起来像这样：</p>
+<pre><code><span class="literal">New</span><span class="attribute">-Item</span> c:/scriptsWindows PowerShell <span class="attribute">-type</span> directory
+</code></pre><p>用同样的步骤创建一个新文件，文件夹，具体完整的路径名称。但是要输入 file。这个命令建立文件 C:/Scripts/New_file.txt ：</p>
+<pre><code><span class="keyword">New</span>-Item c:/scripts ew_file.txt -<span class="keyword">type</span> <span class="keyword">file</span>
+</code></pre><p>如果你输入的项目已经被建立存在了，你会得到一个错误的信息，类似这样：</p>
+<pre><code><span class="keyword">New</span>-Item : The <span class="keyword">file</span> <span class="attribute">'C</span>:/scripts ew_file.txt' already exists.
+</code></pre><p>当然，你可以在包含 -force 参数的情况下来废除这个默认行为：</p>
+<pre><code><span class="keyword">New</span>-Item c:/scripts ew_file.txt -<span class="keyword">type</span> <span class="keyword">file</span> -<span class="keyword">force</span>
+</code></pre><p> 如果你使用 -force 来键入现在有的 New_file.txt 文件将全部更新，为空文件。</p>
+<p>说到全部更新，为空文件，你也可以使用 -value 参数来添加一些数据到你的新文件里。这个命令上加上一句，This is text added to the file 的同时建立一个New_file.txt ：</p>
+<pre><code><span class="literal">New</span><span class="attribute">-Item</span> c:/scripts ew_file<span class="built_in">.</span>txt <span class="attribute">-type</span> file <span class="attribute">-force</span> <span class="attribute">-value</span> <span class="string">"This is text added to the file"</span>
+</code></pre><p>New-Item 别名</p>
+<pre><code>ni
+</code></pre><h3 id="文件夹移动及复制">文件夹移动及复制</h3>
+<p>可以使用mv，类似于bash中的用法，以后再叙。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Robot/">Robot</a><a href="/tags/Project/">Project</a><a href="/tags/Control Theory/">Control Theory</a><a href="/tags/Matlab/">Matlab</a>
+  <span></span> <a href="/tags/PowerShell/">PowerShell</a><a href="/tags/Windows/">Windows</a><a href="/tags/Tricks/">Tricks</a>
   </div>
 
 
@@ -124,7 +133,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/05/30/proj_ctrlsimu_robot/" data-title="proj_ctrlsimu_robot | Home of Cloudroid" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2014/06/02/powershell_notes/" data-title="Powershell_notes | Home of Cloudroid" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -133,19 +142,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/06/01/tasks/" title="">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  (no title)</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/05/30/sql/"  title="SQL">
+<a href="/2014/06/01/tasks/"  title="">
  <strong>NEXT:</strong><br/> 
- <span>SQL
+ <span>(no title)
 </span>
 </a>
 </div>
@@ -181,7 +182,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Goal"><span class="toc-number">1.</span> <span class="toc-text">Goal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analysis"><span class="toc-number">2.</span> <span class="toc-text">Analysis</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Powershell应用技巧"><span class="toc-number">1.</span> <span class="toc-text">Powershell应用技巧</span></a></li><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-number">1.2.</span> <span class="toc-text">文件操作</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建文件及文件夹"><span class="toc-number">1.2.1.</span> <span class="toc-text">新建文件及文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件夹移动及复制"><span class="toc-number">1.2.2.</span> <span class="toc-text">文件夹移动及复制</span></a></li></ol>
   </div>
 
 <div id="asidepart">
