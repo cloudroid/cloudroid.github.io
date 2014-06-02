@@ -4,16 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>my new post | Home of Cloudroid</title>
+    <title>git_notes | Home of Cloudroid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Sanders Jaylaw">
     
-    <meta name="description" content="这是我第一篇博客
-天下事，为之，则难者亦易，不为，则易者亦难
-就好比写博客，搭一个github pages，不算什么难事，一直拖到现在。不过，今天总算搞好了。参考了这篇文章，很详细。如何搭建一个独立博客——简明Github Pages与Hexo教程，以及这一个系列hexo系列教程。
-最近的计划
-明天">
+    <meta name="description" content="git学习笔记
+基本操作
+Git 教程 - Git 基本用法
+Git是当前最流行的版本控制程序之一，下面是一些基本操作
+mkdir project  # 创建项目目录
+cd project  # 进入到项目目录
+git init  # 初始化 git 仓库。此命令会在当前目录新建一个 .git 目录">
     
     
     
@@ -74,15 +76,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/05/28/StartingPoint/" title="my new post" itemprop="url">my new post</a>
+      <a href="/2014/06/02/git_notes/" title="git_notes" itemprop="url">git_notes</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="Sanders Jaylaw">Sanders Jaylaw</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-05-27T18:59:00.000Z" itemprop="datePublished">5月 28 2014</time>
-    更新日期:<time datetime="2014-05-27T19:05:56.000Z" itemprop="dateModified">5月 28 2014</time>
+    <time datetime="2014-06-01T23:50:05.000Z" itemprop="datePublished">6月 2 2014</time>
+    更新日期:<time datetime="2014-06-01T23:54:39.000Z" itemprop="dateModified">6月 2 2014</time>
     
   </p>
 </header>
@@ -91,24 +93,61 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#这是我第一篇博客"><span class="toc-number">1.</span> <span class="toc-text">这是我第一篇博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#天下事，为之，则难者亦易，不为，则易者亦难"><span class="toc-number">2.</span> <span class="toc-text">天下事，为之，则难者亦易，不为，则易者亦难</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最近的计划"><span class="toc-number">3.</span> <span class="toc-text">最近的计划</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git学习笔记"><span class="toc-number">1.</span> <span class="toc-text">git学习笔记</span></a></li><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-number">1.1.</span> <span class="toc-text">基本操作</span></a></li></ol>
 		</div>
 		
-		<h2 id="这是我第一篇博客">这是我第一篇博客</h2>
-<h2 id="天下事，为之，则难者亦易，不为，则易者亦难">天下事，为之，则难者亦易，不为，则易者亦难</h2>
-<p>就好比写博客，搭一个github pages，不算什么难事，一直拖到现在。不过，今天总算搞好了。<br>参考了这篇文章，很详细。<a href="http://jianshu.io/p/05289a4bc8b2" title="如何搭建一个独立博客——简明Github Pages与Hexo教程" target="_blank">如何搭建一个独立博客——简明Github Pages与Hexo教程</a>，以及这一个系列<a href="http://http://zipperary.com/2013/05/28/hexo-guide-2/" title="hexo tutorial" target="_blank">hexo系列教程</a>。</p>
-<h2 id="最近的计划">最近的计划</h2>
-<p>明天，高数第一章，自控复习好。就这么多。</p>
+		<h1 id="git学习笔记">git学习笔记</h1>
+<h2 id="基本操作">基本操作</h2>
+<p>Git 教程 - Git 基本用法</p>
+<p>Git是当前最流行的版本控制程序之一，下面是一些基本操作</p>
+<pre><code>mkdir project  <span class="preprocessor"># 创建项目目录</span>
+cd project  <span class="preprocessor"># 进入到项目目录</span>
+git init  <span class="preprocessor"># 初始化 git 仓库。此命令会在当前目录新建一个 .git 目录，用于存储 git 仓库的相关信息，初始化提交</span>
+touch README  <span class="preprocessor">#新建README文件</span>
+git <span class="keyword">add</span> .  <span class="preprocessor"># 将当前目录添加到 git 仓库中， 使用 git add -A 则是添加所有改动的文档</span>
+git commit  -m  <span class="string">"Initial commit"</span>
+git remote <span class="keyword">add</span> origin  git @github<span class="preprocessor">.com</span>:lugir /repo<span class="preprocessor">.git</span>  <span class="preprocessor"># 设置仓库</span>
+git commit  --amend  -m  <span class="string">"commit message."</span>  <span class="preprocessor">#修补提交（修补最近一次的提交而不创建新的提交）,提交冲突时可以合并后再推送</span>
+git pull  <span class="preprocessor"># 获取远程版本库提交与本地提交进行合并</span>
+git <span class="keyword">push</span>  <span class="preprocessor"># 提交</span>
+git clone http: //path /to /git<span class="preprocessor">.git</span>  <span class="preprocessor"># 使用别人的仓库,clone 的内容会放在当前目录下的新目录,将代码从本地回传到仓库</span>
+git <span class="keyword">push</span>  -u origin master
+</code></pre><p>使用 git status 查看文件状态</p>
+<pre><code>git status
+</code></pre><p>查看提交日志</p>
+<pre><code>git <span class="built_in">log</span>  <span class="preprocessor"># 查看提交信息</span>
+git <span class="built_in">log</span>  --pretty=oneline  <span class="preprocessor"># 以整洁的单行形式显示提交信息</span>
+</code></pre><p>Git 分支</p>
+<pre><code>git branch  <span class="comment"># 查看分支</span>
+git branch  <span class="number">6</span>.x- <span class="number">1</span>.x  <span class="comment"># 添加分支 6.x-1.x</span>
+git branch checkout master  <span class="comment"># 切换到主分支</span>
+git branch  <span class="operator">-d</span>  <span class="number">6</span>.x- <span class="number">1</span>.x  <span class="comment"># 删除分支 6.x-1.x</span>
+git push origin :branchname  <span class="comment"># 删除远端分支</span>
+</code></pre><p>Git 标签</p>
+<pre><code>git tag  <span class="comment"># 查看分支</span>
+git tag  <span class="number">6</span>.<span class="keyword">x</span>- <span class="number">1.0</span>  <span class="comment"># 添加标签 6.x-1.0</span>
+git show  <span class="number">6</span>.<span class="keyword">x</span>- <span class="number">1.0</span>  <span class="comment"># 查看标签 6.x-1.0 的信息</span>
+git tag  -a  <span class="number">6</span>.<span class="keyword">x</span>- <span class="number">1.0</span> <span class="number">965</span>e066  <span class="comment"># 为之前提交的信息记录 965e066 加上标签</span>
+git <span class="keyword">push</span>  --tags  <span class="comment"># 提交时带上标签信息</span>
+git <span class="keyword">push</span> origin : <span class="regexp">/refs /tags</span> /tagname  <span class="comment"># 删除远端标签</span>
+</code></pre><p>从 git 仓库中导出项目<br>    git archive  —format  tar  —output  /path /to /file.tar master  # 将 master 以 tar 格式打包到指定文件<br>使用 Git 的一些基本守则： 当要commit/提交patch时：</p>
+<pre><code><span class="comment">git</span> <span class="comment">diff</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">check</span> <span class="comment">检查行尾有没有多余的空白</span>
+</code></pre><p>每个 commit 只改一件事情。如果一个文档有多个变更，使用 git add —patch 只选择文档中的部分变更进入 stage<br>写清楚 commit message</p>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/git/">git</a><a href="/tags/notes/">notes</a><a href="/tags/CLI/">CLI</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/05/28/StartingPoint/" data-title="my new post | Home of Cloudroid" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2014/06/02/git_notes/" data-title="git_notes | Home of Cloudroid" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -118,18 +157,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2014/05/30/sql/" title="SQL">
+ <a href="/2014/06/02/rimeime/" title="rimeime">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  SQL</span>
+  rimeime</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2014/05/28/hello-world/"  title="Hello World">
+<a href="/2014/06/02/powershell_notes/"  title="Powershell_notes">
  <strong>NEXT:</strong><br/> 
- <span>Hello World
+ <span>Powershell_notes
 </span>
 </a>
 </div>
@@ -165,7 +204,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#这是我第一篇博客"><span class="toc-number">1.</span> <span class="toc-text">这是我第一篇博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#天下事，为之，则难者亦易，不为，则易者亦难"><span class="toc-number">2.</span> <span class="toc-text">天下事，为之，则难者亦易，不为，则易者亦难</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最近的计划"><span class="toc-number">3.</span> <span class="toc-text">最近的计划</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git学习笔记"><span class="toc-number">1.</span> <span class="toc-text">git学习笔记</span></a></li><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-number">1.1.</span> <span class="toc-text">基本操作</span></a></li></ol>
   </div>
 
 <div id="asidepart">
